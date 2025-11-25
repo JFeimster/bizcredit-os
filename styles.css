@@ -1,0 +1,102 @@
+@layer base {
+    :root {
+        --vibe-bg-dark: #0A0A0A;
+        --vibe-bg-medium: #1A1A1A;
+        --vibe-accent: #8B5CF6;
+        --vibe-glow: #A78BFA;
+        --vibe-text-light: #E0E0E0;
+        --vibe-text-medium: #B0B0B0;
+        --vibe-border: #333333;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--vibe-text-light);
+    background-color: var(--vibe-bg-dark);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a2a2a' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0 30V30h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 30V60h-2v-4h-4v-2h4v4h2v4h4v2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6h4V4H6zm0 30V30H4v4H0v2h4v4h2v-4h4v-2H6zm0 30V60H4v-4H0v-2h4v-4h2v4h4v2H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zm30 15V15h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 19V15H4v4H0v2h4v4h2v-4h4v-2H6zm0 30V45H4v4H0v2h4v4h2v-4h4v-2H6zm30 0V45h-2v4h-4v2h4v4h2v-4h4v-2h-4zM45 19v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 30v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM15 19v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 30v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM45 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM15 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zm30 51V55h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-30 0V55h-2v4h-4v2h4v4h2v-4h4v-2h-4zM45 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM15 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px;
+}
+
+h1, h2, h3, h4, .font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    border-color: var(--vibe-glow);
+}
+.pricing-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--vibe-glow);
+}
+.hover\:shadow-vibe-accent-sm:hover {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+.hover\:shadow-vibe-accent-md:hover {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUpModal {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-fade-in-up.delay-200 {
+    animation-delay: 0.2s;
+}
+.animate-bounce-in {
+    animation: bounceIn 0.8s ease-out forwards;
+}
+.animate-slide-down {
+    animation: slideDown 0.4s ease-out forwards;
+}
+.animate-slide-up-modal {
+    animation: slideUpModal 0.4s ease-out forwards;
+}
+
+/* Custom Styling for Auth Modal Tabs */
+#authModal #showLogin.bg-vibe-accent {
+    background-color: var(--vibe-accent);
+    color: white;
+}
+#authModal #showSignup.bg-vibe-accent {
+    background-color: var(--vibe-accent);
+    color: white;
+}
+#authModal #showLogin.bg-vibe-border {
+    background-color: var(--vibe-border);
+    color: var(--vibe-text-medium);
+}
+#authModal #showSignup.bg-vibe-border {
+    background-color: var(--vibe-border);
+    color: var(--vibe-text-medium);
+}
